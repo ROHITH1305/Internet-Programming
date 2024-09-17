@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://png.pngtree.com/background/20231017/original/pngtree-online-payment-cashback-credit-card-render-get-money-refunds-on-your-picture-image_5593051.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #444;
+        }
+        input[type="text"], input[type="number"], input[type="month"], input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, input[type="month"]:focus, input[type="password"]:focus, select:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .payment-method {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .payment-method:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f7f7f7;
+        }
+        .payment-due {
+            text-align: center;
+            background-color: #ffdd57;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .additional-info {
+            display: none;
+            margin-top: 20px;
+        }
+        .additional-info label {
+            display: block;
+            margin-top: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        function showAdditionalInfo() {
+            var selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            
+            document.getElementById("creditCardInfo").style.display = selectedPaymentMethod === 'Credit Card' ? 'block' : 'none';
+            document.getElementById("additionalInfoSection").style.display = selectedPaymentMethod !== 'Credit Card' ? 'block' : 'none';
+            document.getElementById("additionalInfoLabel").textContent = selectedPaymentMethod === 'UPI' ? 'UPI ID:' : 'Account Number:';
+            document.getElementById("nameLabel").textContent = selectedPaymentMethod === 'UPI' ? 'Name:' : 'Cardholder Name:';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Payment</h1>
+
+        <!-- Payment Due Section -->
+        <div class="payment-due" id="paymentDue">
+            Payment pending 
+        </div>
+
+        <!-- Payment Methods Section -->
+        <div class="payment-methods">
+            <label class="payment-method" aria-label="Credit Card">
+                <input type="radio" name="paymentMethod" value="Credit Card" checked onclick="showAdditionalInfo()"> Credit Card
+            </label>
+            <label class="payment-method" aria-label="UPI">
+                <input type="radio" name="paymentMethod" value="UPI" onclick="showAdditionalInfo()"> UPI
+            </label>
+            <label class="payment-method" aria-label="Bank Transfer">
+                <input type="radio" name="paymentMethod" value="Bank Transfer" onclick="showAdditionalInfo()"> Bank Transfer
+            </label>
+        </div>
+
+        <!-- Payment Form -->
+        <form id="paymentForm" action="payment comfirmation.html" method="POST">
+            <label id="nameLabel" for="name">Cardholder Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Credit Card Info -->
+            <div id="creditCardInfo">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" maxlength="16">
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate">
+
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" name="cvv" maxlength="3">
+            </div>
+
+            <!-- Additional Info for UPI or Bank Transfer -->
+            <div id="additionalInfoSection" class="additional-info">
+                <label id="additionalInfoLabel">Additional Info:</label>
+                <input type="text" id="additionalInfo" name="additionalInfo">
+            </div>
+
+            <label for="amount">Payment Amount ($):</label>
+            <input type="number" id="amount" name="amount" required value="200">
+
+            <button type="submit">Make Payment</button>
+        </form>
+    </div>
+</body>
+</html>

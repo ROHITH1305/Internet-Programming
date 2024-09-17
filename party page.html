@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Management System</title>
+    <style>
+        body {
+            font-family: 'Pacifico', cursive; /* Festive font */
+            margin: 0;
+            padding: 0;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQow_LL4ODMZsDEyfUltgHJ2D1ingHIrmbLbbRQiDhbMyi3AMikrBWxgzUTSmOYBdvG1mw&usqp=CAU'); /* Fun party background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333; /* Darker text color for better readability */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
+        .header .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #FF4081; /* Pink color for the button */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .header .home-btn:hover {
+            background-color: #e91e63; /* Darker pink for hover effect */
+        }
+        .header h1 {
+            font-size: 3em;
+            color: #FFD700; /* Gold color for a festive feel */
+        }
+        .header h2 {
+            font-size: 1.5em;
+            color: #FF4081; /* Pink color for contrast */
+        }
+        .header::before {
+            content: url('https://img.icons8.com/ios-filled/50/000000/party.png'); /* Party sticker */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #FF4081;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 1.1em;
+        }
+        .nav a:hover {
+            background-color: #e91e63;
+        }
+        .content, .past-events, .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .content h3, .past-events h3 {
+            color: #FF4081;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 20px);
+            height: auto;
+            border-radius: 10px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #FF4081; /* Pink color for labels */
+        }
+        .form-container input[type="text"], .form-container input[type="email"], .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #FF4081; /* Pink border for inputs */
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #FF4081;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #e91e63;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #FF4081; /* Pink color for footer text */
+            text-align: center;
+            font-size: 14px;
+        }
+        .passage {
+            color: #333; /* Darker text color for better readability */
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        .party-stickers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .party-stickers img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="admin home page.html" class="home-btn">Home</a> <!-- Home Button -->
+            <h1>Party Management System</h1>
+            <h2>Celebrate in Style!</h2>
+            <div class="nav">
+                <a href="#details">Event Details</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#register">Register</a>
+                <a href="#past-events">Past Parties</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="content" id="details">
+            <h3>Event Details</h3>
+            <p>Date: October 20, 2024</p>
+            <p>Venue: The Celebration Hall, Elm Street</p>
+            <p>Time: 6:00 PM - 10:00 PM</p>
+            <p>Description: Enjoy an unforgettable party with exciting games, great music, and a lively atmosphere.</p>
+            <p class="passage">Join us for an incredible party experience! Our event features interactive activities, fun games, and a vibrant setting. Whether you're coming for the delicious food, fantastic entertainment, or just to enjoy the company of friends, this party has something for everyone. The venue is beautifully decorated with festive colors and lights, ensuring a memorable evening for all attendees. Don't miss out on this exciting celebration!</p>
+        </div>
+        
+        <div class="gallery" id="gallery">
+            <!-- Gallery Images -->
+            <img src="https://img.freepik.com/premium-photo/dj-party-with-crowd-background_700955-3802.jpg" alt="Party Image 1">
+            <img src="https://t3.ftcdn.net/jpg/07/50/45/72/360_F_750457256_InGM4jFxd5g5jSbvHthD2TJpMUVH0sMk.jpg" alt="Party Image 2">
+            <img src="https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2021/04/Untitled-design-3-1030x541.jpg" alt="Party Image 3">
+        </div>
+        
+        <div class="form-container" id="register">
+            <h3>Register for the Party</h3>
+            <form action="event registration.html" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="text" id="guests" name="guests" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        
+        <div class="past-events" id="past-events">
+            <h3>Past Parties</h3>
+            <div class="past-event">
+                <h4>Emily's Birthday Bash</h4>
+                <p>Date: May 15, 2023</p>
+                <p>Venue: Grand Ballroom</p>
+                <p>Description: A glamorous celebration with a chic theme, complete with elegant decorations and a live band.</p>
+            </div>
+            <div class="past-event">
+                <h4>Michael's Surprise Party</h4>
+                <p>Date: August 30, 2022</p>
+                <p>Venue: The Loft</p>
+                <p>Description: A surprise party featuring fun games, a karaoke session, and a delicious buffet.</p>
+            </div>
+            <div class="past-event">
+                <h4>Sophia's Garden Party</h4>
+                <p>Date: April 22, 2021</p>
+                <p>Venue: Garden of Delight</p>
+                <p>Description: A beautiful garden party with floral decorations, a tea party, and outdoor games.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Party Management System. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

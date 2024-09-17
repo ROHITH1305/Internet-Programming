@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Event Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background-image: url('https://i.pinimg.com/736x/56/26/da/5626da0e582372e85f1dc39edd7da1e8.jpg'); /* Background image link */
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .header {
+            background: rgba(255, 255, 255, 0.5); /* Adjusted transparency */
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+        }
+        .header .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff6f61; /* Pink color for the button */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .header .home-btn:hover {
+            background-color: #e55b50; /* Darker pink for hover effect */
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+        .header h2 {
+            margin-top: 10px;
+            font-size: 1.5em;
+            color: #555;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff6f61;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #e55b50;
+        }
+        .content, .past-events, .form-container {
+            background: rgba(255, 255, 255, 0.6); /* Adjusted transparency */
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .content h3, .past-events h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 20px);
+            height: auto;
+            border-radius: 8px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container input[type="text"], .form-container input[type="email"], .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #e55b50;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="admin home page.html" class="home-btn">Home</a> <!-- Home Button -->
+            <h1>Wedding Event Management</h1>
+            <h2>Plan Your Perfect Day</h2>
+            <div class="nav">
+                <a href="#details">Event Details</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#register">Register</a>
+                <a href="#past-events">Past Events</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="content" id="details">
+            <h3>Event Details</h3>
+            <p>Date: October 15, 2024</p>
+            <p>Venue: Grand Ballroom, Downtown Hotel</p>
+            <p>Time: 5:00 PM - 11:00 PM</p>
+            <p>Description: Join us for a beautiful wedding celebration filled with joy, love, and unforgettable moments.</p>
+        </div>
+        
+        <div class="gallery" id="gallery">
+            <!-- Gallery Images -->
+            <img src="https://t4.ftcdn.net/jpg/06/39/80/75/360_F_639807553_uwUKbAadh2moLIRDQo4vzYJo1CeQLNYH.jpg" alt="Wedding Image 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPodP1H5wtF_wTRZAF0MxsyXmFb4RBeX_WKg&s" alt="Wedding Image 2">
+            <img src="https://www.dipakstudios.com/gallery/14594121173.jpeg" alt="Wedding Image 3">
+        </div>
+        
+        <div class="form-container" id="register">
+            <h3>Register for the Event</h3>
+            <form action="event registration.html" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="text" id="guests" name="guests" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        
+        <div class="past-events" id="past-events">
+            <h3>Past Events</h3>
+            <div class="past-event">
+                <h4>John and Jane's Wedding</h4>
+                <p>Date: April 22, 2023</p>
+                <p>Venue: Elegant Hall, City Center</p>
+                <p>Description: A stunning wedding with beautiful decor and an unforgettable reception.</p>
+            </div>
+            <div class="past-event">
+                <h4>Michael and Sarah's Wedding</h4>
+                <p>Date: August 10, 2022</p>
+                <p>Venue: Royal Gardens, Riverside</p>
+                <p>Description: An intimate wedding ceremony with breathtaking views and personalized touches.</p>
+            </div>
+            <div class="past-event">
+                <h4>David and Emily's Wedding</h4>
+                <p>Date: December 5, 2021</p>
+                <p>Venue: Grand Palace, Downtown</p>
+                <p>Description: A grand celebration with a luxurious setting and memorable moments.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Wedding Event Management. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

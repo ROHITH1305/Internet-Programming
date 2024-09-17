@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .profile-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff4081;
+        }
+        .profile-container h2 {
+            color: #333;
+            margin: 10px 0;
+        }
+        .profile-container .section {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .profile-container .section div {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+        .profile-container .section label {
+            font-weight: bold;
+            color: #333;
+        }
+        .profile-container .section input[type="text"],
+        .profile-container .section input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .profile-container .section button {
+            display: inline-block;
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            border: none;
+        }
+        .profile-container .section button:hover {
+            background-color: #e91e63;
+        }
+        .profile-container .cancel-button {
+            background-color: #ccc;
+            color: #333;
+        }
+        .profile-container .cancel-button:hover {
+            background-color: #bbb;
+        }
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .home-btn:hover {
+            background-color: #e55b50;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <a href="admin home page.html" class="home-btn">Home</a> <!-- Home Button -->
+        <img src="https://www.catholicsingles.com/wp-content/uploads/2020/06/blog-header-3.png" alt="Profile Picture">
+        <h2 id="profile-name">Kumar</h2>
+        
+        <div class="section details">
+            <div>
+                <label for="profile-email">Email:</label>
+                <p id="profile-email">Kumar04@gmail.com</p>
+            </div>
+            <div>
+                <label for="profile-phone">Phone:</label>
+                <p id="profile-phone">9876543210</p>
+            </div>
+            <div>
+                <label for="profile-address">Address:</label>
+                <p id="profile-address">Chennai</p>
+            </div>
+            <button onclick="showEditForm()">Edit Profile</button>
+        </div>
+
+        <div class="section edit-form" style="display: none;">
+            <form id="edit-profile-form">
+                <div>
+                    <label for="edit-name">Full Name:</label>
+                    <input type="text" id="edit-name" name="name" value="John Doe" required>
+                </div>
+                <div>
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" name="email" value="john.doe@example.com" required>
+                </div>
+                <div>
+                    <label for="edit-phone">Phone:</label>
+                    <input type="text" id="edit-phone" name="phone" value="123-456-7890" required>
+                </div>
+                <div>
+                    <label for="edit-address">Address:</label>
+                    <input type="text" id="edit-address" name="address" value="123 Main St, Anytown, USA" required>
+                </div>
+                <div>
+                    <button type="submit" class="save-button">Save Changes</button>
+                    <button type="button" class="cancel-button" onclick="showProfile()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showEditForm() {
+            document.querySelector('.details').style.display = 'none';
+            document.querySelector('.edit-form').style.display = 'block';
+        }
+
+        function showProfile() {
+            document.querySelector('.edit-form').style.display = 'none';
+            document.querySelector('.details').style.display = 'block';
+        }
+
+        document.getElementById('edit-profile-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Here you would typically handle the form submission,
+            // e.g., send data to the server or update the profile data locally.
+            showProfile(); // Hide the edit form and show the profile details
+        });
+    </script>
+</body>
+</html>

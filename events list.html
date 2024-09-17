@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Selection - Event Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('https://www.hdwallpapers.in/download/haikyu_team_on_christmas_celebration_hd_anime-HD.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+        .home-btn:hover {
+            background-color: #e55b50;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            position: relative;
+        }
+        .header, .events, .message {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .events h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .event-category {
+            margin-bottom: 30px;
+        }
+        .event-category h4 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .event-option {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .event-option label {
+            font-size: 16px;
+            color: #333;
+            margin-left: 10px;
+        }
+        .event-details {
+            font-size: 14px;
+            color: #666;
+            margin-left: 30px;
+        }
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .home-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .submit-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .header, .events, .message {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="admin home page.html" class="home-btn" aria-label="Go to Home">Home</a> <!-- Home Button -->
+
+    <div class="container">
+        <div class="header">
+            <h1>Select an Event</h1>
+        </div>
+        
+        <div class="events">
+            <h3>Available Events</h3>
+            <form id="eventForm">
+                <!-- Ongoing Events Section -->
+                <div class="event-category">
+                    <h4>Ongoing Events</h4>
+                    <div class="event-option">
+                        <input type="radio" id="event1" name="event" value="Summer Tech Workshop" required>
+                        <label for="event1">Summer Tech Workshop - September 1 - September 10, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $5,000<br>
+                            Total Invited Guests: 100
+                        </div>
+                    </div>
+                    <div class="event-option">
+                        <input type="radio" id="event2" name="event" value="Digital Marketing Bootcamp">
+                        <label for="event2">Digital Marketing Bootcamp - September 5 - September 15, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $3,500<br>
+                            Total Invited Guests: 75
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Events Section -->
+                <div class="event-category">
+                    <h4>Upcoming Events</h4>
+                    <div class="event-option">
+                        <input type="radio" id="event3" name="event" value="Annual Tech Conference">
+                        <label for="event3">Annual Tech Conference - March 25, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $10,000<br>
+                            Total Invited Guests: 500
+                        </div>
+                    </div>
+                    <div class="event-option">
+                        <input type="radio" id="event4" name="event" value="Marketing Summit">
+                        <label for="event4">Marketing Summit - April 10, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $7,000<br>
+                            Total Invited Guests: 200
+                        </div>
+                    </div>
+                    <div class="event-option">
+                        <input type="radio" id="event5" name="event" value="Healthcare Expo">
+                        <label for="event5">Healthcare Expo - May 5, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $8,500<br>
+                            Total Invited Guests: 300
+                        </div>
+                    </div>
+                    <div class="event-option">
+                        <input type="radio" id="event6" name="event" value="Environmental Sustainability Forum">
+                        <label for="event6">Environmental Sustainability Forum - June 20, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $6,000<br>
+                            Total Invited Guests: 150
+                        </div>
+                    </div>
+                    <div class="event-option">
+                        <input type="radio" id="event7" name="event" value="AI & Robotics Symposium">
+                        <label for="event7">AI & Robotics Symposium - July 15, 2024</label>
+                        <div class="event-details">
+                            Total Payment: $9,000<br>
+                            Total Invited Guests: 250
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <div id="message" class="message" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('eventForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get selected event
+            const selectedEvent = document.querySelector('input[name="event"]:checked');
+
+            if (selectedEvent) {
+                const eventDetails = selectedEvent.parentElement.querySelector('.event-details').innerHTML;
+                const eventName = selectedEvent.nextElementSibling.textContent.split(' - ')[0];
+                
+                // Show success message
+                const messageDiv = document.getElementById('message');
+                messageDiv.innerHTML = `
+                    <h3>Registration Successful!</h3>
+                    <p>You have successfully registered for the following event:</p>
+                    <strong>${eventName}</strong><br>
+                    ${eventDetails}
+                `;
+                messageDiv.style.display = 'block';
+            } else {
+                alert('Please select an event before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>

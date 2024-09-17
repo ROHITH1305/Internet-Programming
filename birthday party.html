@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Party Event Management</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://wallpapers.com/images/hd/birthday-party-background-iunrs3lebq6ue922.jpg'); /* Fun birthday background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: grey; /* Default grey text */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
+        .header .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #FF4081; /* Pink color for the button */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .header .home-btn:hover {
+            background-color: #e91e63; /* Darker pink for hover effect */
+        }
+        .header h1 {
+            font-size: 3em;
+            color: #FF4081;
+        }
+        .header h2 {
+            font-size: 1.5em;
+            color: #FFD700;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white; /* Text inside pink box changed to white */
+            background-color: #FF4081;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #e91e63;
+        }
+        .content, .past-events, .form-container {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .content h3, .past-events h3 {
+            color: #FF4081;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 20px);
+            height: auto;
+            border-radius: 10px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: grey; /* Changed from white to grey */
+        }
+        .form-container input[type="text"], .form-container input[type="email"], .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: none;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #FF4081;
+            color: white; /* Text inside submit button changed to white */
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #e91e63;
+        }
+        .footer {
+            margin-top: 20px;
+            color: grey; /* Changed from white to grey */
+            text-align: center;
+            font-size: 14px;
+        }
+        .passage {
+            color: grey;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        #register {
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="admin home page.html" class="home-btn">Home</a> <!-- Home Button -->
+            <h1>Birthday Party Event Management</h1>
+            <h2>Make Every Birthday Special!</h2>
+            <div class="nav">
+                <a href="#details">Event Details</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#register">Register</a>
+                <a href="#past-events">Past Parties</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="content" id="details">
+            <h3>Event Details</h3>
+            <p>Date: October 5, 2024</p>
+            <p>Venue: The Party House, Main Street</p>
+            <p>Time: 4:00 PM - 8:00 PM</p>
+            <p>Description: Join us for a fantastic birthday celebration full of fun games, delicious food, and unforgettable memories.</p>
+            <p class="passage">Our birthday event is tailored to bring joy and excitement to guests of all ages! From interactive games for children to customized themes for adults, this party will offer an unforgettable experience. The venue is decorated with bright, festive colors and balloons, with fun activities such as face painting, piñatas, and magic shows. Whether you're a kid or a grown-up, there's something for everyone at this event. Delicious food, a spectacular birthday cake, and a range of entertainment options will keep everyone engaged. Come celebrate with us and make this birthday party one to remember!</p>
+        </div>
+        
+        <div class="gallery" id="gallery">
+            <!-- Gallery Images -->
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/029/317/657/small_2x/celebration-setting-lively-decorations-make-for-a-spirited-birthday-party-background-ai-generated-photo.jpg" alt="Birthday Party Image 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4JeE-kpB6rm-djikUKsBjFQIp6ZT5q2rbpw&s" alt="Birthday Party Image 2">
+            <img src="https://plus.unsplash.com/premium_photo-1661402076818-385b97b75cbb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmlydGhkYXklMjBwYXJ0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Birthday Party Image 3">
+        </div>
+        
+        <div class="form-container" id="register">
+            <h3>Register for the Party</h3>
+            <form action="event registration.html" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="text" id="guests" name="guests" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        
+        <div class="past-events" id="past-events">
+            <h3>Past Birthday Parties</h3>
+            <div class="past-event">
+                <h4>Alice's 10th Birthday</h4>
+                <p>Date: July 12, 2023</p>
+                <p>Venue: Wonderland Hall</p>
+                <p>Description: A magical celebration with a "Wonderland" theme, complete with costumes and games.</p>
+            </div>
+            <div class="past-event">
+                <h4>Jake's 8th Birthday</h4>
+                <p>Date: March 22, 2022</p>
+                <p>Venue: Adventure Park</p>
+                <p>Description: An outdoor party filled with adventurous games, including obstacle courses and treasure hunts.</p>
+            </div>
+            <div class="past-event">
+                <h4>Emma's 5th Birthday</h4>
+                <p>Date: December 5, 2021</p>
+                <p>Venue: Fairy Tale Palace</p>
+                <p>Description: A fairy-tale-themed birthday with princesses, knights, and lots of dancing.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Birthday Party Event Management. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

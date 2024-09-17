@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            background-image: url('https://png.pngtree.com/background/20231017/original/pngtree-online-payment-cashback-credit-card-render-get-money-refunds-on-your-picture-image_5593051.jpg');
+            background-size: cover; /* Ensure the background image covers the whole page */
+            background-repeat: no-repeat; /* Prevent repeating of the background image */
+            background-attachment: fixed; /* Keep the background image fixed during scroll */
+            background-position: center; /* Center the background image */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto; /* Centered container */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+            position: relative; /* Ensure relative positioning for stacking context */
+            z-index: 1; /* Ensure container is above the background */
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px; /* Margin top to ensure space below the logo */
+            font-size: 36px; /* Enlarged font size for the heading */
+        }
+        .logo {
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px; /* Increased bottom margin for space below logo */
+        }
+        .thank-you {
+            font-size: 24px; /* Enlarged font size for the thank you message */
+            font-weight: bold;
+            color: #28a745;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Image -->
+        <img src="https://thumbs.dreamstime.com/b/payment-successful-template-vector-art-success-ful-206586442.jpg" alt="Payment Successful" class="logo">
+
+        <h1>Payment Successful</h1>
+
+        <!-- Thank You Message -->
+        <p class="thank-you">Thank you for your payment!</p>
+
+        <!-- Back to Home Button -->
+        <a href="admin home page.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: #fff; border-radius: 4px; text-decoration: none; font-size: 16px;">Back to Home</a>
+    </div>
+</body>
+</html>

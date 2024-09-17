@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Launch Event Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475'); /* Random tech/product background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        .header h2 {
+            margin-top: 10px;
+            font-size: 1.8em;
+            color: #f5a623;
+        }
+        .header .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .header .home-btn:hover {
+            background-color: #0056b3;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #0056b3;
+        }
+        .content, .past-events, .form-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .content h3, .past-events h3 {
+            color: #f5a623;
+            margin-bottom: 20px;
+        }
+        .content p {
+            color: #eee;
+            font-size: 18px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 20px);
+            height: auto;
+            border-radius: 8px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container input[type="text"], .form-container input[type="email"], .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        #register{
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="admin home page.html" class="home-btn">Home</a>
+            <h1>Product Launch Event Management</h1>
+            <h2>Innovate, Launch, Succeed</h2>
+            <div class="nav">
+                <a href="#details">Event Details</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#register">Register</a>
+                <a href="#past-events">Past Launches</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="content" id="details">
+            <h3>Event Details</h3>
+            <p>Date: November 30, 2024</p>
+            <p>Venue: Tech Hub Convention Center</p>
+            <p>Time: 10:00 AM - 5:00 PM</p>
+            <p>Description: Join us for the launch of our revolutionary new product that is set to transform the industry. Be among the first to experience the future of technology.</p>
+        </div>
+        
+        <div class="gallery" id="gallery">
+            <!-- Gallery Images -->
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Launch Image 1">
+            <img src="https://img.freepik.com/premium-photo/product-photography-hd-8k-generative-ai_978425-631.jpg" alt="Product Launch Image 2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsqW8foZVrpQNneT2aYMe_P9UC_4n0raDMfA&s" alt="Product Launch Image 3">
+        </div>
+        
+        <div class="form-container" id="register">
+            <h3>Register for the Event</h3>
+            <form action="event registration.html" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="text" id="guests" name="guests" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        
+        <div class="past-events" id="past-events">
+            <h3>Past Product Launches</h3>
+            <div class="past-event">
+                <h4>Launch of Product X</h4>
+                <p>Date: June 15, 2023</p>
+                <p>Venue: Innovators Hall, City Center</p>
+                <p>Description: A groundbreaking launch that marked a new era in AI-driven technology. Attended by industry leaders.</p>
+            </div>
+            <div class="past-event">
+                <h4>Launch of Product Y</h4>
+                <p>Date: March 22, 2022</p>
+                <p>Venue: Tech Park, Riverside</p>
+                <p>Description: A successful launch with interactive demonstrations of cutting-edge hardware, attracting media attention.</p>
+            </div>
+            <div class="past-event">
+                <h4>Launch of Product Z</h4>
+                <p>Date: December 5, 2021</p>
+                <p>Venue: Silicon Valley Expo Center</p>
+                <p>Description: A massive product unveiling event with live streaming and global participation.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Product Launch Event Management. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

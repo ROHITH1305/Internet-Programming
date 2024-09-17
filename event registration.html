@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-image: url('https://media.licdn.com/dms/image/v2/C561BAQE-51J-8KkMZg/company-background_10000/company-background_10000/0/1584559866970/eventscom_cover?e=2147483647&v=beta&t=3bktbE7ts5aNwH8XEUM5rW0G2aMbuQ1b2dHBVQgZqmA');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .home-btn:hover {
+            background-color: #e55b50;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="date"], textarea, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #000;
+        }
+        input[type="button"], input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="button"]:hover, input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .event {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+        }
+        .event-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .event-date {
+            color: #555;
+        }
+        .event-description, .event-budget, .event-guests {
+            margin-top: 10px;
+        }
+        .event-budget, .event-guests {
+            color: #007bff;
+        }
+        .pay-now-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .pay-now-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a href="admin home page.html" class="home-btn">Home</a> <!-- Home Button -->
+
+    <div class="container">
+        <h1>Event Management System</h1>
+
+        <div class="form-section">
+            <h2>Create New Event</h2>
+            <form id="eventForm">
+                <label for="eventTitle">Event Title:</label>
+                <input type="text" id="eventTitle" name="eventTitle" required>
+                
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <label for="eventDescription">Event Description:</label>
+                <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+                
+                <label for="totalGuests">Total Guests:</label>
+                <input type="number" id="totalGuests" name="totalGuests" required>
+                
+                <label for="budget">Budget ($):</label>
+                <input type="number" id="budget" name="budget" required>
+                
+                <input type="button" value="Add Event" onclick="addEvent()">
+            </form>
+        </div>
+
+        <div class="event-list" id="eventList">
+            <!-- Event items will be appended here -->
+        </div>
+    </div>
+
+    <script>
+        function addEvent() {
+            var title = document.getElementById("eventTitle").value;
+            var date = document.getElementById("eventDate").value;
+            var description = document.getElementById("eventDescription").value;
+            var totalGuests = document.getElementById("totalGuests").value;
+            var budget = document.getElementById("budget").value;
+
+            if (title && date && description && totalGuests && budget) {
+                var eventList = document.getElementById("eventList");
+                var eventDiv = document.createElement("div");
+                eventDiv.className = "event";
+
+                var titleElem = document.createElement("div");
+                titleElem.className = "event-title";
+                titleElem.textContent = title;
+
+                var dateElem = document.createElement("div");
+                dateElem.className = "event-date";
+                dateElem.textContent = "Date: " + date;
+
+                var descriptionElem = document.createElement("div");
+                descriptionElem.className = "event-description";
+                descriptionElem.textContent = description;
+
+                var budgetElem = document.createElement("div");
+                budgetElem.className = "event-budget";
+                budgetElem.textContent = "Budget: $" + budget;
+
+                var guestsElem = document.createElement("div");
+                guestsElem.className = "event-guests";
+                guestsElem.textContent = "Total Guests: " + totalGuests;
+
+                var payNowButton = document.createElement("button");
+                payNowButton.className = "pay-now-button";
+                payNowButton.textContent = "Pay Now";
+                payNowButton.onclick = function() {
+                    var paymentUrl = 'payment page.html' + encodeURIComponent(budget);
+                    window.location.href = "payment page.html"; // Redirect to the payment page
+                };
+
+                eventDiv.appendChild(titleElem);
+                eventDiv.appendChild(dateElem);
+                eventDiv.appendChild(descriptionElem);
+                eventDiv.appendChild(budgetElem);
+                eventDiv.appendChild(guestsElem);
+                eventDiv.appendChild(payNowButton);
+
+                eventList.appendChild(eventDiv);
+
+                // Clear the form fields
+                document.getElementById("eventForm").reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>

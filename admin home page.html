@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event Management System for organizing and managing events seamlessly.">
+    <meta name="keywords" content="Event Management, Event Planning, Event Registration">
+    <title>Home - Event Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('https://eventbrite-s3.s3.amazonaws.com/marketing/landingpages/assets/2023/organizer/a_organizer_event--creator-eventbrite-.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+        }
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #007bff;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            margin: 10px 0;
+            color: #333;
+        }
+        header h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 24px;
+            color: #007bff;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .menu-content a {
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        .menu-content a:last-child {
+            border-bottom: none;
+        }
+        .menu-content a:hover {
+            background-color: #f4f4f4;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .content h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .image-box {
+            border: 2px solid #000;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .image-box .caption {
+            padding: 10px;
+            background: #fff;
+            border-top: 2px solid #000;
+            text-align: center;
+            color: #333;
+        }
+        footer {
+            margin-top: 20px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+        }
+        .notification {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menuContent = document.getElementById('menu-content');
+            menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function(event) {
+            const menuContent = document.getElementById('menu-content');
+            const menu = document.querySelector('.menu');
+            if (!menu.contains(event.target) && !menuContent.contains(event.target)) {
+                menuContent.style.display = 'none';
+            }
+        });
+
+        document.querySelectorAll('.menu-content a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-content').style.display = 'none';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://www.catholicsingles.com/wp-content/uploads/2020/06/blog-header-3.png" alt="User Avatar">
+            <h1>Event Management System</h1>
+            <div class="menu" onclick="toggleMenu()">☰</div>
+            <div id="menu-content" class="menu-content">
+                <a href="profile.html">Profile</a>
+                <a href="event registration.html">Create Event</a>
+                <a href="events list.html">View Registrations</a>
+                <a href="settings.html">Update Settings</a>
+                <a href="generate reports.html">Generate Reports</a>
+                <a href="login.html">Sign Out</a>
+            </div>
+        </header>
+        
+        <div class="content">
+            <h3>Event Management System</h3>
+            <p>Our Event Management System is designed to simplify the process of planning and executing events of all sizes. With an intuitive user interface and powerful features, it caters to a diverse range of events, from intimate gatherings to large-scale conferences. Key functionalities include:</p>
+            <ul>
+                <li><strong>Event Scheduling:</strong> Easily schedule events, set dates, and manage time slots. Our system provides automated reminders and notifications to ensure no detail is overlooked.</li>
+                <li><strong>Registration Management:</strong> Customize registration forms to collect attendee information and manage ticket sales. Track registrations in real-time and generate reports on attendee demographics.</li>
+                <li><strong>Resource Allocation:</strong> Efficiently manage event resources such as venues, equipment, and staff. Allocate resources based on event needs and availability.</li>
+                <li><strong>Event Promotion:</strong> Use built-in marketing tools to promote your events. Create and send invitations, manage RSVPs, and integrate with social media platforms.</li>
+                <li><strong>Financial Tracking:</strong> Keep track of event budgets, expenses, and revenue. Generate financial reports to assess the profitability of your events.</li>
+                <li><strong>Customizable Templates:</strong> Utilize a variety of event templates for different types of events, from corporate seminars to weddings and parties. Customize them to fit your specific needs.</li>
+                <li><strong>Reporting and Analytics:</strong> Access detailed analytics and reports on event performance. Measure key metrics like attendance rates, revenue, and attendee satisfaction.</li>
+                <li><strong>24/7 Support:</strong> Our dedicated support team is available around the clock to assist with any issues or questions you may have. We’re here to ensure your events are a success.</li>
+            </ul>
+            <p>Whether you are organizing a corporate meeting, a charity fundraiser, or a social gathering, our system provides the tools and flexibility needed to ensure a smooth and successful event.</p>
+            
+            <div class="image-gallery">
+                <a href="birthday party.html" class="image-box">
+                    <img src="https://media.istockphoto.com/id/1074986054/photo/group-of-children-at-birthday-party-at-home.jpg?s=612x612&w=0&k=20&c=ggIzZGu_Ti3Evr5ebSOwoDfEPgU2DON3lXWKhRFUEuU=" alt="Children at a birthday party">
+                    <div class="caption">Birthday Party</div>
+                </a>
+                <a href="concerts page.html" class="image-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqNhH_hKQ24uJMKILKo70-lkTTUyQLtHrAQ&s" alt="Concert Event Management">
+                    <div class="caption">Concert Event Management</div>
+                </a>
+                <a href="conferece page.html" class="image-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRx0-FQ6E1jjHKzTC83b9I5A3dto6weL_hA&s" alt="Conference">
+                    <div class="caption">Conference</div>
+                </a>
+                <a href="wedding page.html" class="image-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKT676tR25abjGI_jFLkln8xjDQW-t78KtJg&s" alt="Wedding">
+                    <div class="caption">Wedding</div>
+                </a>
+                <a href="party page.html" class="image-box">
+                    <img src="https://thumbs.dreamstime.com/b/fans-enjoying-party-vibes-stage-lights-crowd-audience-hands-raised-music-festival-young-cheerful-active-151818041.jpg" alt="Party">
+                    <div class="caption">Party</div>
+                </a>
+                <a href="product launches.html" class="image-box">
+                    <img src="https://www.shutterstock.com/image-photo/new-product-business-development-concept-260nw-2336599687.jpg" alt="Product Launch Events">
+                    <div class="caption">Product Launches</div>
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            &copy; 2024 Event Management System. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
